@@ -1083,4 +1083,38 @@ html,body{
 	}	
 }
 
+// 1280pxx
+@media (min-width: 1280px){
+	.z-about>div:nth-child(2)>div:nth-child(2) p{
+		padding-right: 100px;
+	}
+	.table .t-2{
+		line-height: 45pt;
+	}
+	.z-pointer{
+		&.z-projects{
+			transform: translateY(-80%) translateX(0px) skew(-15deg, -5deg) scale(0.6);
+		}
+	}
+	.z-about{
+		.z-image{
+			&.long{
+				width: 1140px;
+			}
+			&.active{
+				&:before{
+					width: 1140px;
+				}
+			}
+			&.actived{
+				&:before{
+					width:0px;
+				}
+			}
+		}
+	}
+	
+}
+
+
 
