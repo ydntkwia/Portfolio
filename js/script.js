@@ -171,8 +171,11 @@
 			}, 1000);
 		}
 
-		onViewport("#hallo, #hallow", "active", 500, function() {
-			
+		onViewport(".z-animation", "active", 700, function() {
+
+		});
+		onViewport(".z-animation2", "active", 800, function() {
+
 		});
 	});
 
@@ -182,6 +185,7 @@
 		var scrollPos = $(window).scrollTop()
 		var winHeight = $(window).height()
 		var docHeight = $(document).height()
+		var countem = docHeight - winHeight - 150;
 		var perc = 100 * scrollPos / (docHeight - winHeight);
 		var perc2 = 2200 * scrollPos / (docHeight - winHeight);
 		var perc3 = 1200 * scrollPos / (docHeight - winHeight);
@@ -235,7 +239,7 @@
 				}
 			}
 
-			if (distance2 < 850) {
+			if (scrollPos > countem) {
 				if (elems4) {
 					elems4.forEach(a =>	a.classList.add("z-active"));
 				}

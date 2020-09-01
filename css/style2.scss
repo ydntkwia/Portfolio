@@ -70,7 +70,8 @@ html,body{
 			padding-top: 10pt;
 			font-family: $mon;
 			font-size: 15pt;
-			font-weight: 400
+			font-weight: 400;
+			line-height:unset !important;
 		}
 
 		&.last{
@@ -492,6 +493,38 @@ html,body{
 	}	
 }
 
+.z-anim{
+	transition: 0.9s;
+	transform : translateX(-100px);
+	opacity: 0;
+
+	&.active{
+		transform: translateX(0);
+		opacity: 1;
+	}
+}
+
+.z-anim2{
+	transition: 0.9s;
+	transform : translateX(100%);
+	opacity: 0;
+
+	&.active{
+		transform: translateX(0);
+		opacity: 1;
+	}
+}
+
+.z-anim3{
+	transition: 0.9s;
+	transform : translateY(100%);
+	opacity: 0;
+
+	&.active{
+		transform: translateY(0);
+		opacity: 1;
+	}
+}
 
 .second{
 	color: white;
@@ -978,10 +1011,20 @@ html,body{
 	&>div:nth-child(2){
 		margin-top: 250px;
 		&>div:nth-child(1){
+			transition: 0.6s;
+			transform : translateX(-200px);
+			opacity: 0;
+
+			&.active{
+				transform: translateX(0);
+				opacity: 1;
+			}
+
 			span{
 				font-family: $mn;
 				font-size: 40pt;
 				line-height: 40pt;
+				
 				span{
 					color: $z-red;
 				}
@@ -989,6 +1032,10 @@ html,body{
 		}
 		&>div:nth-child(2){
 			p{
+				transition: 0.6s;
+				transform : translateY(200px);
+				opacity: 0;
+
 				font-family: $mon;
 				padding-right:180px;
 				padding-left:20px;
@@ -1000,6 +1047,11 @@ html,body{
 				}
 				&.z-space{
 					margin-top: 50px;
+				}
+
+				&.active{
+					transform: translateY(0);
+					opacity: 1;
 				}
 			}
 		}
@@ -1194,7 +1246,7 @@ html,body{
 		height: 800px; 
 	}
 	.z-projects .row div:nth-child(1) div div{
-		top: 20%;
+		top: 25%;
 		padding-left: unset;
 	}
 	.z-featured{
