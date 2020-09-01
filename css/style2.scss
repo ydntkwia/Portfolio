@@ -239,78 +239,80 @@ html,body{
 // ZETHELLO 08-16-2020
 .z-projects{
 	.row{
-		div{
-			&:nth-child(1){
-				height: 700px;
+		.z-pro-1{
+			height: 700px;
+
+			div{
+				width: 450px;
+				height: inherit;
+				float: right;
 
 				div{
-					width: 450px;
-					height: inherit;
-					float: right;
+					float: unset;
+					top: 25%;
+					position: relative;
+					height: max-content;
 
-					div{
-						float: unset;
-						top: 25%;
-						position: relative;
-						height: max-content;
+					span{
 
-						span{
-
-							font-family: $mon;
-							font-size: 15pt;
-							color: $z-white;
-							opacity: 0.3;
-							transition: 0.3s ease;
-							&.semi{
-								opacity:0.1;
-							}
-
-							&:nth-child(4){
-								padding-top:5px; 
-								position:absolute;
-							}
-
-							&.title{
-								color: white;
-								position:relative;
-								top: 40px;
-								font-size: 35pt;
-								font-weight: 800;
-								transition: 0.1;
-
-							}
+						font-family: $mon;
+						font-size: 15pt;
+						color: $z-white;
+						opacity: 0.3;
+						transition: 0.3s ease;
+						&.semi{
+							opacity:0.1;
 						}
 
-						svg{
-							color: $z-red;
-							font-size: 50pt;
-							transform: rotate(0deg);
-							transition: 0.3s;
-							position: absolute;
-							margin-top: 40px;
-							opacity: 0;
+						&:nth-child(4){
+							padding-top:5px; 
+							position:absolute;
+						}
 
-							&:hover{
-								transform: rotate(-45deg);
-							}
+						&.title{
+							color: white;
+							position:relative;
+							top: 40px;
+							font-size: 35pt;
+							font-weight: 800;
+							transition: 0.1;
+
+						}
+					}
+
+					svg{
+						color: $z-red;
+						font-size: 50pt;
+						transform: rotate(0deg);
+						transition: 0.3s;
+						position: absolute;
+						margin-top: 40px;
+						opacity: 0;
+
+						&:hover{
+							transform: rotate(-45deg);
 						}
 					}
 				}
 			}
-			&:nth-child(2){
+		}
+		.z-pro-2{
 
-				@extend %bg-property;
-				filter: grayscale(1);
-				@for $a from 1 through 2{
-					&.zp-#{$a}{
-						background-image:url("../img/z-object/bg-object"+#{$a}+".jpg");
-					}				
-				}
+			@extend %bg-property;
+			filter: grayscale(1);
+			@for $a from 1 through 2{
+				&.zp-#{$a}{
+					background-image:url("../img/z-object/bg-object"+#{$a}+".jpg");
+				}				
+			}
+
+			&.mobile{
+				display: none;
 			}
 		}
 
 		&:hover{
-			div:nth-child(1){
+			.z-pro-1{
 				div{
 					div{
 						span{
@@ -326,7 +328,7 @@ html,body{
 					}
 				}
 			}
-			div:nth-child(2){
+			.z-pro-2{
 				background-size: 120%;
 				filter: unset;
 			}
@@ -1393,7 +1395,7 @@ html,body{
 		h1{
 			margin-left: 5vw;
 			font-size: 40px;
-			padding-bottom: 107pt;
+			padding-bottom: 50pt;
 		}
 		h5{
 			margin-left: 5vw;
@@ -1404,7 +1406,255 @@ html,body{
 	.z-mobile{
 		display: unset !important;
 	}
+
+	.z-projects{
+		.row{
+			.z-pro-1{
+				padding-left: 5vw;
+				height: 400px;
+				div{
+					width: 90vw;
+					div{
+						top: 40px;
+						span{
+							opacity: 1;
+							&.semi{
+								opacity: 0.4;
+							}
+							&:nth-child(4){
+								opacity: 0.9;
+								padding-top:0px; 
+							}
+							&.title{
+								opacity: 1;
+								font-size: 28pt;
+								line-height: 30pt;
+							}
+						}
+
+						svg{
+							opacity: 1;
+							font-size: 40pt;
+							transform: rotate(-45deg);
+
+							&:hover{
+								transform: inherit;
+							}
+						}
+					}
+				}
+			}
+			.z-pro-2{
+				filter: unset;
+
+				&.mobile{
+					display: unset;
+					height: 300px;
+					background-repeat: no-repeat;
+					background-size:cover;
+					background-position:center center;
+				}
+				&.desktop{
+					display: none;
+				}
+			}
+
+			&:hover{
+				.z-pro-1{
+					div{
+						div{
+							span{
+								opacity: inherit;
+
+								&.semi{
+									opacity:inherit;
+								}
+							}
+							svg{
+								opacity: inherit;
+							}
+						}
+					}
+				}
+				.z-pro-2{
+					background-size: 100%;
+					filter: unset;
+				}
+			}
+		}
+	}
+	.table{
+		.t-1, .t-2, .t-3{
+			&.no-gutter{
+			}
+			&.last{
+			}
+		}
+		.t-1, .t-3{
+			width: unset;
+			span.red{
+			}
+		}
+		.t-2{
+			span.red{
+			}
+		}
+		&.z-black{
+		}
+
+		tr{
+			&.z-desktop{
+				display: none;
+			}
+		}
+	}
+
+	.z-contacts{
+		.z-link{
+			margin-left: 5vw;
+			text-align: left;
+
+			div{
+				height: 200px;
+				background: $z-red;
+				z-index: 1000;
+				position: fixed;
+				width: 0vw;
+				top: 0;
+				left: 0;
+				transition: 0.9s ease;
+				transition-delay: 0.2s;
+
+				&.z-active{
+					width: 100vw;
+				}
+
+				&.z-delay{
+					transition-delay: 1s; 
+				}
+			}
+			.z-a{
+				font-family: $mn;
+				color: $z-black;
+				text-decoration: none;
+				font-size: 26pt;
+				transition: 0.5s ease;
+				position: relative;
+				z-index: 1001;
+				display: inline-block;
+				transition-delay: 0.2s;
+
+				&:hover{
+					color: inherit;
+				}
+
+				&:before{
+					content: "Let's do something interesting!";
+					font-family: $mon;
+					color: $z-black;
+					font-size: 40pt;
+					position:absolute;
+					font-weight: 400;
+					transform: translateY(-80px);
+				}
+
+				&.z-delay{
+					transition-delay: 1s; 
+				}
+
+				span{
+					color: $z-red;
+					transition: 0.4s;
+					&.z-active{
+						color: $z-white
+					}
+				}
+
+			}
+
+		}	
+	}
+
+	.m-gutter{
+		&_a{
+			height: 200px;
+		}
+	}
+
+	.footer{
+		.z-button{
+			font-size:20pt;
+			padding:30pt 0;
+			border-top:1px solid transparent;
+
+			.z-blued{
+				height: 122px;
+				transform: translateY(-40px);
+			}
+
+			&.z-active{
+				border-top:1px solid $z-black;
+			}
+		}
+	}
+
+	.copyright{
+		.z-1{
+			font-size: 20px;
+			padding :20px 0;
+			span.copy:nth-child(1){
+				padding-left:15px;
+
+				&:after{
+					display: none;
+				}
+
+				&:before{
+					display: none;
+				}
+			}
+			span.copy:nth-child(2){
+				&:after{
+					display: none;
+				}
+
+				&:before{
+					display: none;
+				}
+			}
+
+		}
+	}
+
+	.z-links{
+
+	text-align: left;
+	ol{
+		padding:0;
+		margin: 0;
+		li{
+			display: inline;
+			list-style: none;
+			font-family: $mn;
+			color: $z-black;
+			font-size: 35pt;
+			line-height:1.2;
+			
+			svg{
+				color: $z-red;
+				transform: rotate(-45deg);
+				display: none;
+			}
+
+			&.z-active{
+				svg{
+					display: unset;
+				}
+			}
+		}
+	}
 }
 
+}
 
 

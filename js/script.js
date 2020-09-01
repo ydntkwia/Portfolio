@@ -49,15 +49,7 @@
 		var this2 = document.querySelector(".z-pointer");
 
 
-		// function
-		if (m_vw <= 540) {
-			document.querySelector(".z-name").textContent = "Zethello";
-			document.querySelector(".z-years").textContent = "2020";
-			document.querySelector(".z-two").textContent = "GRA";
-			document.querySelector(".z-three").textContent = "PHIC";
-		}else{
 
-		}
 
 		if (elems) {
 			elems.forEach(a =>
@@ -188,6 +180,16 @@
 		onViewport(".z-animation2", "active", 800, function() {
 
 		});
+
+		if (m_vw <= 540) {
+			document.querySelector(".z-name").textContent = "Zethello";
+			document.querySelector(".z-years").textContent = "2020";
+			document.querySelector(".z-two").textContent = "GRA";
+			document.querySelector(".z-three").textContent = "PHIC";
+			document.querySelector(".copyright .z-1 span.copy:nth-child(2)").textContent = "ZETHELLO";
+		}else{
+
+		}
 	});
 	$(window).on('resize', function(){
 		const m_vw = $(window).width();
@@ -196,9 +198,11 @@
 			document.querySelector(".z-years").textContent = "2020";
 			document.querySelector(".z-two").textContent = "GRA";
 			document.querySelector(".z-three").textContent = "PHIC";
+			document.querySelector(".copyright .z-1 span.copy:nth-child(2)").textContent = "ZETHELLO";
 		}else{
+			document.querySelector(".copyright .z-1 span.copy:nth-child(2)").textContent = "Developed by ZETHELLO";
 			document.querySelector(".z-two").textContent = "GRAPHIC";
-			document.querySelector(".z-three").textContent = "DESIGNER";
+			document.querySelector(".z-three").innerHTML = "DESIGNER<span class='red'>.</span>";
 		}
 	});
 
