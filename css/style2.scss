@@ -1,5 +1,5 @@
-@import url('https://fonts.cdnfonts.com/css/monument-extended');
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&display=swap');
+// @import url('https://fonts.cdnfonts.com/css/monument-extended');
+// @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&display=swap');
 
 /*root*/
 $z-black : #1b1b2f;
@@ -9,13 +9,13 @@ $z-orange : #F2A635;
 $z-purple : #501698;
 $z-white : #F2F2F2;
 
-// @font-face {
-// 	font-family: 'Monument Extended';
-// 	src: url('monumentextended-regular-webfont.woff2') format('woff2'),
-// 	url('monumentextended-regular-webfont.woff') format('woff');
-// 	font-weight: normal;
-// 	font-style: normal;
-// }
+@font-face {
+	font-family: 'Monument Extended';
+	src: url('monumentextended-regular-webfont.woff2') format('woff2'),
+	url('monumentextended-regular-webfont.woff') format('woff');
+	font-weight: normal;
+	font-style: normal;
+}
 
 $mn : 'Monument Extended';
 $mon : 'Montserrat', sans-serif;
@@ -753,13 +753,13 @@ html,body{
 			font-family: $mn;
 			padding-left: 15px;
 
-			p{
-				margin-top: 0px;
-				margin-bottom: 0px;
+			span{
+				display: inline-block;
+			}
 
-				span.red{
-					color: $z-red;
-				}
+			span.red{
+				display: unset;
+				color: $z-red;
 			}
 		}
 	}
@@ -1136,6 +1136,9 @@ html,body{
 	.z-main .z-header .z-logo img{
 		height: 45px;
 	}
+	.z-main .z-header .z-main-text{
+		font-size: 145pt;
+	}
 	.z-featured{
 		zoom: 0.8;
 	}
@@ -1143,10 +1146,10 @@ html,body{
 		padding-right: 100px;
 	}
 	.z-projects .row div:nth-child(1){
-		height: 450px; 
+		height: 650px; 
 	}
 	.z-projects .row div:nth-child(1) div div{
-		top: 10%;
+		top: 20%;
 	}
 	.table .t-2{
 		line-height: 45pt;
@@ -1180,7 +1183,54 @@ html,body{
 @media (min-width: 1600px){
 	.container, .container-lg, .container-md, .container-sm, .container-xl, .container-xxl {
 		max-width: 1550px !important;
-	}	
+	}
+	.z-main .z-header .z-main-text{
+		font-size: 200pt;
+	}
+	.z-contacts .z-link .z-a{
+		font-size: 87pt;
+	}
+	.z-projects .row div:nth-child(1){
+		height: 800px; 
+	}
+	.z-projects .row div:nth-child(1) div div{
+		top: 20%;
+		padding-left: unset;
+	}
+	.z-featured{
+		zoom: 1;
+	}
+	.z-main .z-header .z-logo img{
+		height: 60px;
+	}
+	.z-about>div:nth-child(2)>div:nth-child(2) p{
+		padding-right: 80px;
+	}
+	.table .t-2{
+		line-height: 45pt;
+	}
+	.z-pointer{
+		&.z-projects{
+			transform: translateY(-70%) translateX(-30px) skew(-15deg, -5deg) scale(0.75);
+		}
+	}
+	.z-about{
+		.z-image{
+			&.long{
+				width: 1550px;
+			}
+			&.active{
+				&:before{
+					width: 1550px;
+				}
+			}
+			&.actived{
+				&:before{
+					width:0px;
+				}
+			}
+		}
+	}
 }
 
 

@@ -6,7 +6,37 @@
 	});
 
 	$(document).ready(function() {
+		// debug
+		function onViewport(el, elClass, offset, callback) {
+			var didScroll = false;
+			var this_top;
+			var height;
+			var top;
 
+			if(!offset) { var offset = 0; }
+
+			$(window).scroll(function() {
+				didScroll = true;
+			});
+
+			setInterval(function() {
+				if (didScroll) {
+					didScroll = false;
+					top = $(this).scrollTop();
+
+					$(el).each(function(i){
+						this_top = $(this).offset().top - offset;
+						height   = $(this).height();
+
+						if (top >= this_top && !$(this).hasClass(elClass)) {
+							$(this).addClass(elClass);
+
+							if (typeof callback == "function") callback(el);
+						}
+					});
+				}
+			}, 100);
+		}
 		// variables
 		const elems = document.querySelectorAll(".z-scrollable.z-load");
 		const classes1 = $(".z-button>span");
@@ -141,6 +171,9 @@
 			}, 1000);
 		}
 
+		onViewport("#hallo, #hallow", "active", 500, function() {
+			
+		});
 	});
 
 	$(window).on('scroll', function () {
@@ -150,16 +183,19 @@
 		var winHeight = $(window).height()
 		var docHeight = $(document).height()
 		var perc = 100 * scrollPos / (docHeight - winHeight);
-		var perc2 = 2800 * scrollPos / (docHeight - winHeight);
-		var perc3 = 1800 * scrollPos / (docHeight - winHeight);
-		var perc4 = 800 * scrollPos / (docHeight - winHeight);
+		var perc2 = 2200 * scrollPos / (docHeight - winHeight);
+		var perc3 = 1200 * scrollPos / (docHeight - winHeight);
+		var perc4 = 200 * scrollPos / (docHeight - winHeight);
 		var winper = 0.9 * winHeight;
 
 		$('.z-scroll').height(perc + '%');
-		$('.z-one').css("margin-left",perc2+"px");
-		$('.z-two').css("margin-left",perc3+"px");
-		$('.z-three').css("margin-left",perc4+"px");
 
+		if (scrollPos > winHeight) {
+		} else{
+			$('.z-one').css('transform','translateX('+perc2+'px)');
+			$('.z-two').css('transform','translateX('+perc3+'px)');
+			$('.z-three').css('transform','translateX('+perc4+'px)');	
+		}
 
 		if (scrollPos > winper) {
 			document.querySelector(".z-image").classList.add("long");
