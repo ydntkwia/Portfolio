@@ -44,10 +44,21 @@
 		const classes3 = $(".z-pointer-action");
 		const elems3 = document.querySelector(".z-button>.z-pointer-action");
 		const elems4 = document.querySelectorAll(".z-a , .z-div");
+		const m_vw = $(window).width();
 		var pp = document.querySelectorAll(".z-p");
 		var this2 = document.querySelector(".z-pointer");
 
+
 		// function
+		if (m_vw <= 540) {
+			document.querySelector(".z-name").textContent = "Zethello";
+			document.querySelector(".z-years").textContent = "2020";
+			document.querySelector(".z-two").textContent = "GRA";
+			document.querySelector(".z-three").textContent = "PHIC";
+		}else{
+
+		}
+
 		if (elems) {
 			elems.forEach(a =>
 				setTimeout(function (){
@@ -178,12 +189,25 @@
 
 		});
 	});
+	$(window).on('resize', function(){
+		const m_vw = $(window).width();
+		if (m_vw <= 540) {
+			document.querySelector(".z-name").textContent = "Zethello";
+			document.querySelector(".z-years").textContent = "2020";
+			document.querySelector(".z-two").textContent = "GRA";
+			document.querySelector(".z-three").textContent = "PHIC";
+		}else{
+			document.querySelector(".z-two").textContent = "GRAPHIC";
+			document.querySelector(".z-three").textContent = "DESIGNER";
+		}
+	});
 
 	$(window).on('scroll', function () {
 
 		// variables
 		var scrollPos = $(window).scrollTop()
 		var winHeight = $(window).height()
+		var winWidth = $(window).width()
 		var docHeight = $(document).height()
 		var countem = docHeight - winHeight - 150;
 		var perc = 100 * scrollPos / (docHeight - winHeight);
@@ -194,11 +218,13 @@
 
 		$('.z-scroll').height(perc + '%');
 
-		if (scrollPos > winHeight) {
-		} else{
-			$('.z-one').css('transform','translateX('+perc2+'px)');
-			$('.z-two').css('transform','translateX('+perc3+'px)');
-			$('.z-three').css('transform','translateX('+perc4+'px)');	
+		if (winWidth > 920) {
+			if (scrollPos > winHeight) {
+			} else{
+				$('.z-one').css('transform','translateX('+perc2+'px)');
+				$('.z-two').css('transform','translateX('+perc3+'px)');
+				$('.z-three').css('transform','translateX('+perc4+'px)');	
+			}
 		}
 
 		if (scrollPos > winper) {

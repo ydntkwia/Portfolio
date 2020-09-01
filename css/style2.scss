@@ -1058,7 +1058,9 @@ html,body{
 	}
 }
 
-
+.z-mobile{
+	display: none !important;
+}
 // animation
 @keyframes bounce-in-top {
 	0% {
@@ -1127,6 +1129,7 @@ html,body{
 		background-position: right center;
 	}
 }
+
 // 950pxx
 @media (min-width: 950px){
 	.z-contacts .z-link .z-a{
@@ -1285,6 +1288,123 @@ html,body{
 	}
 }
 
+// 540pxx
+@media only screen and (max-width: 540px){
+	.z-main{
+		background-size:80%;
+	}
+	.z-pointer{
+		display: none;
+	}
+	.z-scroll{
+		width: 3px;
+	}
+	.z-scroll2{
+		width: 3px;
+	}
+	.z-featured{
+		zoom: 0.7;
+		position:absolute;
+	}
+
+	.z-main{
+		.z-header{
+			.z-logo{
+				img{
+					height: 30px;
+					margin-top:20px;
+				}
+			}
+
+			.z-name{
+				top: 20px;
+				left: 5vw;
+				font-size: 15pt;
+
+				&:before{
+					display: none;
+				}
+			}
+
+			.z-years{
+				right: 5vw;
+				&:before{
+					display: none;
+				}
+				&:after{
+					display: none;
+				}
+			}
+
+			.z-main-text{
+			}
+		}
+	}
+
+	.z-about{
+		margin-top: 100px;
+		.z-image{
+			height: 300px;
+			&.long{
+				width: 90vw;
+				margin-left: 5vw;
+			}
+			&.active{
+				&:before{
+					width: 90vw;
+					height: 300px;
+				}
+			}
+			&.actived{
+				&:before{
+					width:0px;
+				}
+			}
+		}
+		&>div:nth-child(2){
+			margin-top: 140px;
+			margin-left:5vw;
+			
+			&>div:nth-child(1){
+				span{
+					font-size: 30pt;
+					line-height: 30pt;
+				}
+			}
+		}
+
+		&>div:nth-child(2){
+			p{
+				margin-top: 60px;
+
+				padding: unset !important;
+				font-size: 18px !important;
+				line-height: 20pt !important;
+				width: 90vw;
+
+				&.z-space{
+					margin-top: 40px!important;
+				}
+			}
+		}
+	}
+
+	.second{
+		h1{
+			margin-left: 5vw;
+			font-size: 40px;
+			padding-bottom: 107pt;
+		}
+		h5{
+			margin-left: 5vw;
+			padding-top:120pt;
+		}
+	}
+
+	.z-mobile{
+		display: unset !important;
+	}
+}
 
 
 
