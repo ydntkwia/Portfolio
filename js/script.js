@@ -181,26 +181,30 @@
 
 		});
 
-		if (m_vw <= 540) {
+		if (m_vw <= 980) {
 			document.querySelector(".z-name").textContent = "Zethello";
 			document.querySelector(".z-years").textContent = "2020";
 			document.querySelector(".z-two").textContent = "GRA";
 			document.querySelector(".z-three").innerHTML = "PHIC<br>";
-			document.querySelector(".z-a").innerHTML = "Say<br>hello<span>!</span>";
+			document.querySelector(".z-a").innerHTML = "hello<span>@</span>zethello<span><br>.</span>com";
 			document.querySelector(".copyright .z-1 span.copy:nth-child(2)").textContent = "ZETHELLO";
+		}else if(m_vw <= 540){
+			document.querySelector(".z-a").innerHTML = "Say<br>hello<span>!</span>";
 		}else{
 
 		}
 	});
 	$(window).on('resize', function(){
 		const m_vw = $(window).width();
-		if (m_vw <= 540) {
+		if (m_vw <= 980) {
 			document.querySelector(".z-name").textContent = "Zethello";
 			document.querySelector(".z-years").textContent = "2020";
 			document.querySelector(".z-two").textContent = "GRA";
 			document.querySelector(".z-three").innerHTML = "PHIC<br>";
-			document.querySelector(".z-a").innerHTML = "Say<br>hello<span>!</span>";
+			document.querySelector(".z-a").innerHTML = "hello<span>@</span>zethello<span><br>.</span>com";
 			document.querySelector(".copyright .z-1 span.copy:nth-child(2)").textContent = "ZETHELLO";
+		}else if(m_vw <= 540){
+			document.querySelector(".z-a").innerHTML = "Say<br>hello<span>!</span>";
 		}else{
 			document.querySelector(".copyright .z-1 span.copy:nth-child(2)").textContent = "Developed by ZETHELLO";
 			document.querySelector(".z-two").textContent = "GRAPHIC";
@@ -225,7 +229,7 @@
 
 		$('.z-scroll').height(perc + '%');
 
-		if (winWidth > 920) {
+		if (winWidth > 980) {
 			if (scrollPos > winHeight) {
 			} else{
 				$('.z-one').css('transform','translateX('+perc2+'px)');
