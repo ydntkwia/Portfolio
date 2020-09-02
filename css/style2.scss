@@ -1,5 +1,5 @@
 // @import url('https://fonts.cdnfonts.com/css/monument-extended');
-// @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&display=swap');
 
 /*root*/
 $z-black : #1b1b2f;
@@ -833,7 +833,7 @@ html,body{
 	background: $z-red;
 	top: 0;
 	transform: translateX(100vw);
-	display: none;
+	// display: none;
 	&.z-active{
 		transform: translateX(0vw);
 		transition: 0.6s ease-in;
@@ -1293,7 +1293,7 @@ html,body{
 // 540pxx
 @media only screen and (max-width: 540px){
 	.z-main{
-		background-size:80%;
+		background-size:90%;
 	}
 	.z-pointer{
 		display: none;
@@ -1305,7 +1305,8 @@ html,body{
 		width: 3px;
 	}
 	.z-featured{
-		zoom: 0.7;
+		display: none;
+		zoom: 0.6;
 		position:absolute;
 	}
 
@@ -1339,6 +1340,7 @@ html,body{
 			}
 
 			.z-main-text{
+				font-size: 65pt;
 			}
 		}
 	}
@@ -1427,7 +1429,7 @@ html,body{
 							}
 							&.title{
 								opacity: 1;
-								font-size: 28pt;
+								font-size: 27pt;
 								line-height: 30pt;
 							}
 						}
@@ -1515,58 +1517,36 @@ html,body{
 			text-align: left;
 
 			div{
-				height: 200px;
-				background: $z-red;
-				z-index: 1000;
-				position: fixed;
-				width: 0vw;
-				top: 0;
-				left: 0;
-				transition: 0.9s ease;
-				transition-delay: 0.2s;
-
-				&.z-active{
-					width: 100vw;
-				}
-
-				&.z-delay{
-					transition-delay: 1s; 
-				}
+				display: none;
 			}
 			.z-a{
 				font-family: $mn;
-				color: $z-black;
+				color: $z-red;
 				text-decoration: none;
-				font-size: 26pt;
-				transition: 0.5s ease;
-				position: relative;
-				z-index: 1001;
-				display: inline-block;
-				transition-delay: 0.2s;
-
+				font-size: 72pt;
+				line-height: 85pt;
 				&:hover{
-					color: inherit;
+					color: $z-red;
 				}
 
 				&:before{
-					content: "Let's do something interesting!";
+					content: "Let's do something interesting";
 					font-family: $mon;
 					color: $z-black;
-					font-size: 40pt;
-					position:absolute;
-					font-weight: 400;
-					transform: translateY(-80px);
+					font-size: 20px;
+					line-height: 30px;
+					transform: translateY(-20px);
+					font-weight: 600;
 				}
 
 				&.z-delay{
-					transition-delay: 1s; 
+					transition-delay: unset; 
 				}
 
 				span{
-					color: $z-red;
-					transition: 0.4s;
+					color: $z-black;
 					&.z-active{
-						color: $z-white
+						color: $z-black;
 					}
 				}
 
@@ -1578,6 +1558,11 @@ html,body{
 	.m-gutter{
 		&_a{
 			height: 200px;
+		}
+		&_b{
+			div{
+				height: 100px;
+			}
 		}
 	}
 
@@ -1628,33 +1613,23 @@ html,body{
 
 	.z-links{
 
-	text-align: left;
-	ol{
-		padding:0;
-		margin: 0;
-		li{
-			display: inline;
-			list-style: none;
-			font-family: $mn;
-			color: $z-black;
-			font-size: 35pt;
-			line-height:1.2;
-			
-			svg{
-				color: $z-red;
-				transform: rotate(-45deg);
-				display: none;
-			}
+		text-align: left;
+		ol{
+			li{
+				font-size: 20pt;
+				padding-left:5vw;
+				&.z-active{
+					svg{
+						display: none;
+					}
+				}
 
-			&.z-active{
-				svg{
-					display: unset;
+				span.z-mobile{
+					color: $z-red;
 				}
 			}
 		}
 	}
-}
-
 }
 
 

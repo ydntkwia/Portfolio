@@ -185,7 +185,8 @@
 			document.querySelector(".z-name").textContent = "Zethello";
 			document.querySelector(".z-years").textContent = "2020";
 			document.querySelector(".z-two").textContent = "GRA";
-			document.querySelector(".z-three").textContent = "PHIC";
+			document.querySelector(".z-three").innerHTML = "PHIC<br>";
+			document.querySelector(".z-a").innerHTML = "Say<br>hello<span>!</span>";
 			document.querySelector(".copyright .z-1 span.copy:nth-child(2)").textContent = "ZETHELLO";
 		}else{
 
@@ -197,12 +198,14 @@
 			document.querySelector(".z-name").textContent = "Zethello";
 			document.querySelector(".z-years").textContent = "2020";
 			document.querySelector(".z-two").textContent = "GRA";
-			document.querySelector(".z-three").textContent = "PHIC";
+			document.querySelector(".z-three").innerHTML = "PHIC<br>";
+			document.querySelector(".z-a").innerHTML = "Say<br>hello<span>!</span>";
 			document.querySelector(".copyright .z-1 span.copy:nth-child(2)").textContent = "ZETHELLO";
 		}else{
 			document.querySelector(".copyright .z-1 span.copy:nth-child(2)").textContent = "Developed by ZETHELLO";
 			document.querySelector(".z-two").textContent = "GRAPHIC";
 			document.querySelector(".z-three").innerHTML = "DESIGNER<span class='red'>.</span>";
+			document.querySelector(".z-a").innerHTML = "hello<span>@</span>zethello<span>.</span>com";
 		}
 	});
 
