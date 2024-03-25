@@ -119,8 +119,8 @@
 		document.querySelector("ol>li:nth-child(1)").addEventListener("click", function(){			changeDirectory("https://www.shutterstock.com/g/zethello")});
 		document.querySelector("ol>li:nth-child(2)").addEventListener("click", function(){			changeDirectory("https://stock.adobe.com/contributor/209523513/Zethello")});
 		document.querySelector("ol>li:nth-child(3)").addEventListener("click", function(){			changeDirectory("https://displate.com/zethello/displates")});
-		document.querySelector("ol>li:nth-child(4)").addEventListener("click", function(){			changeDirectory("https://www.fiverr.com/achmadzahra?up_rollout=true")});
-		document.querySelector("ol>li:nth-child(5)").addEventListener("click", function(){			changeDirectory("https://www.instagram.com/_zethello/")});
+		document.querySelector("ol>li:nth-child(4)").addEventListener("click", function(){			changeDirectory("")});
+		document.querySelector("ol>li:nth-child(5)").addEventListener("click", function(){			changeDirectory("https://www.instagram.com/_ydntkwia/")});
 		document.querySelector(".z-featured").addEventListener("click", function(){			changeDirectory("https://community.coreldraw.com/contest/2019-international-design-contest/m/2019_contest_student_winners/231090")});
 
 		if (pp) {
